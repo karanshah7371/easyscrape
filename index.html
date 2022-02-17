@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>easyscrape</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <img src="./img-assets/Group 14231.svg" alt="logo-easy-scrape" />
+        <p class="logo-txt">easy<span>scrape</span></p>
+        <div class="spacer"></div>
+        <a class="item" onclick="window.location='#id-tute'"
+          ><span>How to use</span></a
+        >
+        <a class="item" onclick="window.location='#id-about'"
+          ><span>About</span></a
+        >
+      </div>
+    </nav>
+
+    <section class="main" id="xxx">
+      <div class="container">
+        <p class="txt-one one">Scrape articles with one click!</p>
+        <p class="txt-two two">
+          100% Automatic & <span class="free">Free</span>
+        </p>
+        <img src="./img-assets/118.svg" alt="" class="img" />
+
+        <div class="upload drag-area">
+          <!-- <img src="./img-assets/cloud.svg" alt="" /> -->
+          <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+
+          <span>Drop or <button class="browse-btn">Browse files</button></span>
+          <input id="ip-file" type="file" hidden />
+
+          <div class="ip-x-btn">
+            <input
+              class="ip-url"
+              type="text"
+              placeholder="Enter Keywords or Paste a URL"
+            />
+            <button class="scrape-btn">Scrape & download</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p id="id-tute"></p>
+    <h4 class="tip">
+      TIP : To scrape several links at once, upload a single text file
+      containing links. Every link is written on a separate line.
+    </h4>
+
+    <section class="tute">
+      <p class="one tute-txt">How to Use</p>
+      <div>
+        <iframe
+          src="https://www.youtube.com/embed/50VNCymT-Cs"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="about" id="id-about">
+      <div>
+        <h1 class="one">About</h1>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            dignissimos quidem eius ut praesentium nesciunt iure quam dolorum
+            asperiores totam? Dicta consequuntur corporis cum totam repellat
+            iste debitis voluptates magni? Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Suscipit recusandae nulla voluptatum
+            accusantium quaerat reprehenderit libero veniam fuga tenetur
+            placeat. Quo expedita qui aspernatur perferendis dignissimos facilis
+            voluptatum dolorum temporibus.
+          </p>
+          <div class="qs">
+            <details>
+              <summary class="q">How is this helpful</summary>
+              <p class="a">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis cupiditate facere ratione aliquam similique qui? Esse
+                quas at ad sequi!
+              </p>
+            </details>
+
+            <details>
+              <summary class="q">Who can used it?</summary>
+              <p class="a">
+                Yes! We approach every new project as an opportunity to bring a
+                fresh perspective and generate new ideas, solutions and
+                outcomes. We learn from conversation and observations
+              </p>
+            </details>
+
+            <details>
+              <summary class="q">Contacts</summary>
+              <p class="a">Email : algrowdigi@gmail.com</p>
+              <p class="a">Twitter : algrow_digital</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback">
+      <p>We would like to hear to hear from you 😀</p>
+      <div>
+        <input
+          class="ip-feedback"
+          type="text"
+          placeholder="Any suggestions or Feedback?"
+        />
+        <button class="btn-feedback">Submit</button>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div>
+        <h3>
+          A Product By
+          <a href="https://www.algrowdigital.com"><span>Algrow Digital</span></a
+          >, All Rights reserved.
+        </h3>
+        <p>
+          All trademarks, data and content scraped by the tool are the property
+          of their respective owners. Our tool dosen't scrapes any data that is
+          not in public domain, usage of the data extracted using our tool is
+          intended only for educational purposes and we don't support the use of
+          data for any illegal purposes.
+        </p>
+        <p>(Feel free to contact us if you want to raise any issue)</p>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="./index.js"></script>
+  </body>
+</html>
