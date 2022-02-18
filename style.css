@@ -115,7 +115,7 @@ input {
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 0.5fr;
   grid-template-areas:
     /* ". . . . . . . . " */
     ". x x x . . . ."
@@ -234,6 +234,9 @@ input {
 }
 
 @media only screen and (min-width: 1400px) {
+  .nav-content {
+    padding: 1rem 10rem;
+  }
   .one {
     font-size: 4.2rem;
     line-height: 5rem;
@@ -277,7 +280,7 @@ button:active {
 }
 
 .tip {
-  margin: 3rem 0;
+  margin: 3rem 0 3rem;
   color: var(--dark-grey);
   font-size: 1rem;
   font-weight: 500;
@@ -451,6 +454,10 @@ button:active {
 }
 
 @media only screen and (min-width: 1400px) {
+  .about {
+    padding: 4rem 13rem 6rem;
+  }
+
   .tute {
     height: 90vh;
   }
