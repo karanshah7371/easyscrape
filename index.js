@@ -224,7 +224,6 @@ dropArea.addEventListener("drop", (e) => {
     if (url) {
       // console.log(url);
       var r = new RegExp(/^(ftp|http|https):\/\/[^ "]+$/);
-
       if (r.test(url)) {
         post(url, "url");
       } else {
@@ -234,7 +233,9 @@ dropArea.addEventListener("drop", (e) => {
   };
 
   btnScrap.addEventListener("click", scrapURL);
-  window.addEventListener("keypress", (e) => e.key === "Enter" && scrapURL());
+  window.addEventListener("keypress", (e) => {
+    e.key === "Enter" && ipURL === document.activeElement && scrapURL();
+  });
 }
 
 // CODE : toast
@@ -256,11 +257,42 @@ window.onscroll = function () {
     : navbarColorChanger("rem");
 };
 
-// FEEDBACK HANDLER
-btnFeedback.addEventListener("click", () => {
-  const ipFeedback = feedback.value ? feedback.value : "empty";
-  console.log(ipFeedback);
+const feedbackSender = () => {
+  const ipFeedback = feedback.value ? feedback.value : "";
+  sendFeedback(ipFeedback);
+};
+
+// CODE : FEEDBACK HANDLER
+btnFeedback.addEventListener("click", feedbackSender);
+
+window.addEventListener("keypress", (e) => {
+  if (e.key === "Enter" && feedback === document.activeElement)
+    feedbackSender();
 });
+
+// SEND FEEDBACK TO API
+const sendFeedback = (feedback) => {
+  toast("Sending feedback...");
+  const data = {
+    feedback: feedback,
+  };
+
+  const jsonData = JSON.stringify(data);
+  console.log(jsonData);
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === 4) {
+      console.log("Thanku for your feedback!");
+    }
+  });
+  xhr.open("POST", "https://scrapper-url.herokuapp.com/feedback");
+
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(jsonData);
+};
 
 // Delay execution
 // const sleep = ms => new Promise(r => setTimeout(r, ms));
