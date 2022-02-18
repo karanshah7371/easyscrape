@@ -319,7 +319,7 @@ button:active {
 .toastxyx {
   position: absolute;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: -2rem;
 
   opacity: 100%;
   display: flex;
@@ -338,11 +338,11 @@ button:active {
 
 @keyframes toast-anim {
   0% {
-    margin-top: -0.5rem;
+    margin-top: -2.9rem;
     opacity: 0%;
   }
   100% {
-    margin-top: 1rem;
+    margin-top: -2rem;
     opacity: 100%;
   }
 }
