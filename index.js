@@ -124,19 +124,42 @@ const post = (url, control) => {
     xhr.withCredentials = true;
 
     xhr.addEventListener("readystatechange", function () {
-      toast("URL Scrapped ✅", 3);
       if (this.readyState === 4) {
-        console.log("response :", this.responseText);
+        //console.log("response :", this.responseText);
 
+        // toast("URL Scraped ✅", 3);
         // const a = document.createElement("a");
         // a.href = this.responseText;
-        // // Give filename you wish to download
+        // a.setAttribute("download", "scraped.txt");
         // a.style.display = "none";
 
         // document.body.appendChild(a);
         // a.click();
+        var url = this.responseText;
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
 
-        saveFile("xxx.txt", this.responseText);
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            //console.log(this.responseText);
+            var data = this.responseText;
+            const a = document.createElement("a");
+            a.style.display = "none";
+            document.body.appendChild(a);
+            a.href = window.URL.createObjectURL(
+              new Blob([data], { type: "text/plain" })
+            );
+            a.setAttribute("download", "scraped.txt");
+            a.click();
+
+            window.URL.revokeObjectURL(a.href);
+            document.body.removeChild(a);
+          }
+        });
+
+        xhr.open("GET", url);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send();
 
         ipURL.value = "";
         ipURL.focus();
@@ -148,7 +171,7 @@ const post = (url, control) => {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(jsonData);
   } else if (control == "keyword") {
-    toast("Scrapping Keywords Top Url...");
+    toast("Scraping URL for given Keyword...", 15);
     const data = {
       url: url,
     };
@@ -159,10 +182,9 @@ const post = (url, control) => {
     xhr.withCredentials = true;
 
     xhr.addEventListener("readystatechange", function () {
-      toast("URL Scrapped ✅", 3);
       if (this.readyState === 4) {
         console.log("response :", this.responseText);
-        toast("Downloading file", 7);
+        toast("Downloading file ✅", 7);
         const driveUrl = this.responseText;
         console.log(driveUrl);
 
