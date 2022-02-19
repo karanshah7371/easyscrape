@@ -578,6 +578,9 @@ FOOTER
     margin-bottom: 2rem;
     font-size: 1.5rem;
   }
+  .footer {
+    padding: 3.3rem 13rem 2rem;
+  }
 
   .footer p {
     font-size: 1.1rem;
