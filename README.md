@@ -1,2 +1,2 @@
 # Easyscrape
-## Live site => [EasyScrape](easyscrape.xyz)
+## Live site => [easyscrape.xyz](easyscrape.xyz)
