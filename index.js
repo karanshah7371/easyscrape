@@ -1,7 +1,6 @@
 "use strict";
 
 // CONSTs & LETs
-//Comment added
 // drag-drop & browse
 const dropArea = document.querySelector(".drag-area");
 // const dragText = dropArea.querySelector("header");
