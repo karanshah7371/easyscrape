@@ -315,5 +315,22 @@ const sendFeedback = (feedback) => {
   xhr.send(jsonData);
 };
 
+// Hamburger working for mibile screens
+const ham = document.querySelector(".ham");
+const innerHam = document.querySelector(".innerHam");
+const innerCross = document.querySelector(".innerCross");
+
+const itemContainer = document.querySelector(".item-container");
+
+innerCross.classList.add("hide");
+itemContainer.classList.add("hidden");
+
+ham.addEventListener("click", function () {
+  innerHam.classList.toggle("hide");
+  innerCross.classList.toggle("hide");
+
+  itemContainer.classList.toggle("hidden");
+});
+
 // Delay execution
 // const sleep = ms => new Promise(r => setTimeout(r, ms));
