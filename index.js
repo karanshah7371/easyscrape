@@ -70,7 +70,7 @@ function str2bytes(str) {
 // SEND file to API
 const uploadFile = (file) => {
   toast(`Uploading file : "${file.name}"...`);
-  const API_ENDPOINT = "https://scrapper-url.herokuapp.com/urlfile";
+  const API_ENDPOINT = "https://easyscrape.onrender.com/urlfile";
   const request = new XMLHttpRequest();
   const formData = new FormData();
 
@@ -165,7 +165,7 @@ const post = (url, control) => {
       }
     });
 
-    xhr.open("POST", "https://scrapper-url.herokuapp.com/urlinput");
+    xhr.open("POST", "https://easyscrape.onrender.com/urlinput");
 
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(jsonData);
@@ -196,7 +196,7 @@ const post = (url, control) => {
       }
     });
 
-    xhr.open("POST", "https://scrapper-url.herokuapp.com/scrapebykey");
+    xhr.open("POST", "https://easyscrape.onrender.com/scrapebykey");
 
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(jsonData);
@@ -309,7 +309,7 @@ const sendFeedback = (feedback) => {
       console.log("Thanku for your feedback!");
     }
   });
-  xhr.open("POST", "https://scrapper-url.herokuapp.com/feedback");
+  xhr.open("POST", "https://easyscrape.onrender.com/feedback");
 
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.send(jsonData);
